@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>감정 표현 학습</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 30px;
+        }
+        .emotion-box {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+        .emotion-character {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+        .emotion-text {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #333;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>감정을 배워요!</h1>
+    <p>캐릭터를 클릭하면 감정을 표현하는 단어와 발음을 들을 수 있어요.</p>
+    <div id="emotions-container">
+        <div class="emotion-box">
+            <img class="emotion-character" src="https://via.placeholder.com/300.png?text=행복한+강아지" alt="행복해요" onclick="showEmotion('행복해요')">
+            <div id="text-행복해요" class="emotion-text hidden">행복해요</div>
+            <audio id="audio-행복해요" class="hidden">
+                <source src="https://www.soundjay.com/button/sounds/button-09.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="emotion-box">
+            <img class="emotion-character" src="https://via.placeholder.com/300.png?text=슬픈+고양이" alt="슬퍼요" onclick="showEmotion('슬퍼요')">
+            <div id="text-슬퍼요" class="emotion-text hidden">슬퍼요</div>
+            <audio id="audio-슬퍼요" class="hidden">
+                <source src="https://www.soundjay.com/button/sounds/button-09.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="emotion-box">
+            <img class="emotion-character" src="https://via.placeholder.com/300.png?text=화난+토끼" alt="화가나요" onclick="showEmotion('화가나요')">
+            <div id="text-화가나요" class="emotion-text hidden">화가나요</div>
+            <audio id="audio-화가나요" class="hidden">
+                <source src="https://www.soundjay.com/button/sounds/button-09.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="emotion-box">
+            <img class="emotion-character" src="https://via.placeholder.com/300.png?text=놀란+곰" alt="놀랐어요" onclick="showEmotion('놀랐어요')">
+            <div id="text-놀랐어요" class="emotion-text hidden">놀랐어요</div>
+            <audio id="audio-놀랐어요" class="hidden">
+                <source src="https://www.soundjay.com/button/sounds/button-09.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="emotion-box">
+            <img class="emotion-character" src="https://via.placeholder.com/300.png?text=무서운+여우" alt="무서워요" onclick="showEmotion('무서워요')">
+            <div id="text-무서워요" class="emotion-text hidden">무서워요</div>
+            <audio id="audio-무서워요" class="hidden">
+                <source src="https://www.soundjay.com/button/sounds/button-09.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="emotion-box">
+            <img class="emotion-character" src="https://via.placeholder.com/300.png?text=좋아하는+햄스터" alt="좋아요" onclick="showEmotion('좋아요')">
+            <div id="text-좋아요" class="emotion-text hidden">좋아요</div>
+            <audio id="audio-좋아요" class="hidden">
+                <source src="https://www.soundjay.com/button/sounds/button-09.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="emotion-box">
+            <img class="emotion-character" src="https://via.placeholder.com/300.png?text=싫어하는+고슴도치" alt="싫어요" onclick="showEmotion('싫어요')">
+            <div id="text-싫어요" class="emotion-text hidden">싫어요</div>
+            <audio id="audio-싫어요" class="hidden">
+                <source src="https://www.soundjay.com/button/sounds/button-09.mp3" type="audio/mp3">
+            </audio>
+        </div>
+    </div>
+    <script>
+        function showEmotion(emotion) {
+            const text = document.getElementById('text-' + emotion);
+            const audio = document.getElementById('audio-' + emotion);
+            
+            // Show emotion text
+            text.classList.remove('hidden');
+            
+            // Play audio
+            audio.currentTime = 0;
+            audio.play();
+        }
+    </script>
+</body>
+</html>
